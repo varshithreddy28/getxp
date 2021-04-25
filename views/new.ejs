@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>NewStudent</title>
+</head>
+
+<body>
+    <div class="col-6 offset-3">
+        <div class="container">
+            <h2 class="m-2">Student Register</h2>
+            <form action="/student/new" method="post">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">FirstName</span>
+                    <input type="text" class="form-control" name="student[firstName]" placeholder="firstName"
+                        aria-label="Username" aria-describedby="basic-addon1" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2">LastName</span>
+                    <input type="text" class="form-control" name="student[lastName]" placeholder="lastName's"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">Email</span>
+                    <input type="email" class="form-control" name="student[Email]" id="basic-url"
+                        aria-describedby="basic-addon3" placeholder="Email" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">ContactNumber</span>
+                    <input type="tel" class="form-control" name="student[contact]"
+                        aria-label="Amount (to the nearest dollar)" placeholder="Contact Number" required>
+                </div>
+                <label for="collage">Collage</label>
+                <select class="form-select mb-3" name="student[collage]" id="collage" required>
+                    <% names.forEach((name)=> { %>
+                        <option value="<%= name.name %>">
+                            <%= name.name %>
+                        </option>
+                        <% }) %>
+                </select>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Gradution Year</span>
+                    <input type="text" class="form-control" name="student[graduation]" placeholder="Gradution Year"
+                        aria-label="Username" required>
+
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">City</span>
+                    <input type="text" class="form-control" name="student[city]" placeholder="City"
+                        aria-label="Username" required>
+
+                </div>
+
+                <input class="m-1 btn btn-success" type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
